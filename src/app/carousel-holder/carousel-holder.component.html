@@ -1,0 +1,19 @@
+<div class="owl-carousel-holder">
+    <div class="slider-image-section">
+        <h2>Banner Slider Using Owl Casrousel</h2>
+        <owl-carousel [options]="customOptions" [items]="slidesStore" [carouselClasses]="['owl-theme', 'sliding']">
+            <div *ngFor="let photo of slidesStore">
+                <a [href]="photo.url"><img [src]="photo.thumbnailUrl" alt="" [title]="photo.title" /></a>
+            </div>
+        </owl-carousel>
+    </div>
+    <hr/>
+    <div class="carousel-section">
+        <h2>Image Carousel Using Owl Casrousel</h2>
+        <owl-carousel [options]="customOptions" [items]="slidesStore">
+            <div *ngFor="let photo of slidesStore">
+                <a [href]="photo.url"><img [src]="photo.thumbnailUrl" alt="" [title]="photo.title" /></a>
+            </div>
+        </owl-carousel>
+    </div>
+</div>

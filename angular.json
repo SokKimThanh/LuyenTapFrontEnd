@@ -93,12 +93,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "../node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "31dbd5b9-da4c-4702-b7d9-848b1ccdc1a7"
   }
 }
