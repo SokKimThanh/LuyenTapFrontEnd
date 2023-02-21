@@ -11,11 +11,93 @@
             padding: 0;
             display: flex;
             flex-direction: row;
-            justify-content: center;
+            justify-content: right;
+            // co background image li
+            li:hover {
+                border-radius: 5px;
+                transition: all 0.2s linear;
+                height: 100px;
+            }
             li {
-                display: inline-block;
-                margin: 0 10px;
+                transition: margin 0.1s linear;
+                padding: 8px;
+                min-width: 273px;
+                width: 100%; /* full trang luon thi mo cai nay ra */
+                /*
+                image background config
+                */
+                background-color: #cccccc; /* Used if the image is unavailable */
+                background-position: center; /* Center the image */
+                background-repeat: no-repeat; /* Do not repeat the image */
+                background-size: cover; /* Resize the background image to cover the entire container */
+                /*
+                image background config
+                */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                span:hover {
+                    background-color: red;
+                    border-radius: 5px;
+                    height: 100%;
+                    width: 100%;
+                    opacity: 70%;
+                    transition: 0.2s;
+                }
+                span {
+                    background-color: black;
+                    opacity: 80%; /* muon hien thi tieu de navigation thi tang cai nay len 100% */
+                    width: 95%;
+                    height: 95%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 10px;
+                    transition: 0.1s;
+                    a:hover {
+                        justify-content: right;
+                        opacity: 100%;
+                        transition: 0.2s;
+                        font-size: 18pt;
+                    }
+                    a {
+                        transition: justify-content 0.1s;
+                        padding: 4px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 14pt;
+                        color: black;
+                        text-decoration: none;
+                        transition: 0.1s;
+                        height: auto;
+                        background-color: black;
+                        width: 100%;
+                        margin: 8px;
+                        border-radius: 5px;
+                        color: white;
+                    }
+                }
             }
         }
     }
+}
+.active {
+    justify-content: right;
+    opacity: 100%;
+    font-size: 18pt;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14pt;
+    color: black;
+    text-decoration: none;
+    transition: 0.1s;
+    height: auto;
+    background-color: black;
+    width: 100%;
+    margin: 8px;
+    border-radius: 5px;
+    color: white;
 }
