@@ -103,3 +103,25 @@ html {
     border-radius: 5px;
     color: white;
 }
+a.linkes {
+    color: white;
+}
+/* unvisited link */
+a.linkes:link {
+    color: red;
+}
+
+/* visited link */
+a.linkes:visited {
+    color: green;
+}
+
+/* mouse over link */
+a.linkes:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a.linkes:active {
+    color: blue;
+}

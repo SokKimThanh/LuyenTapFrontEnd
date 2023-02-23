@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { Directive, ElementRef, HostListener } from "@angular/core";
+import { trigger, style, animate, transition } from '@angular/animations';
 
 @Directive({
   selector: "img[appHideMissing], ",
@@ -22,7 +23,15 @@ interface Media {
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
-  styleUrls: ['./welcome.component.scss']
+  styleUrls: ['./welcome.component.scss'],
+  animations: [
+    trigger('fade', [
+      transition('void => *', [
+        style({ opacity: 0 }),
+        animate(300, style({ opacity: 1 }))
+      ])
+    ])
+  ]
 })
 export class WelcomeComponent implements OnInit {
 
@@ -54,7 +63,7 @@ export class WelcomeComponent implements OnInit {
         href: "assets/images/fulls/0" + this.lengthMedia + ".jpg",
         src: "assets/images/thumbs/0" + this.lengthMedia + ".jpg",
       });
-    } else if (this.lengthMedia > 10 && this.lengthMedia < 13) {
+    } else if (this.lengthMedia < 13) {
       this.ListMedia.push({
         id: this.lengthMedia,
         href: "assets/images/fulls/" + this.lengthMedia + ".jpg",
@@ -103,5 +112,9 @@ export class WelcomeComponent implements OnInit {
   }
   public handleMissingImage(event: Event) {
     (event.target as HTMLImageElement).style.display = 'none';
+  }
+
+  filterList(filters: any): void {
+    Object.keys(filters).forEach(key => filters[key] === '' ? delete filters[key] : key);
   }
 }

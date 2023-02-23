@@ -13,7 +13,12 @@ section#banner {
     height: 100%;
     width: 100%;
     .inner {
-        // border: 1px solid black;
+        border: 5px solid red;
+        color: white;
+        background-color: #3a342b;
+        text-align: center;
+        text-transform: capitalize;
+        opacity: 95%;
         h1 {
             // border: 1px solid black;
             font-family: inter;
@@ -61,6 +66,11 @@ section#galleries {
                 border: 1px solid black;
                 flex-direction: row;
             }
+            div.Counting {
+                color: red;
+                font-weight: 600;
+                font-size: 25pt;
+            }
         }
         /* noi dung media list */
         .content {
@@ -70,6 +80,10 @@ section#galleries {
             flex-wrap: wrap;
             align-content: stretch;
             justify-content: center;
+            /* cắt bớt content cho ngắn lại để đỡ phải cuộn nhiều */
+            max-height: 500px;
+            overflow: auto;
+
             div.media {
                 display: flex;
                 flex-direction: row;
@@ -79,7 +93,6 @@ section#galleries {
                 /* position relative dong khung 2 div 
                     lam cho nut chong len hinh */
                 position: relative;
-
                 a {
                     width: auto;
                     // border: 1px solid black;
@@ -103,28 +116,10 @@ section#galleries {
                         */
                     position: absolute;
                     height: 100%;
+                    /* không có nội dung gì */
                     p {
                         border: 1px solid black;
                     }
-                    /* nút component shadow */
-                    // .button {
-                    //     border: 1px solid blue;
-                    //     border-radius: 50px;
-                    //     background-color: blue;
-                    //     opacity: 60%;
-                    //     padding: 20px;
-                    //     color: white;
-                    //     font-size: 12;
-                    //     transition: 0.1s;
-                    // }
-                    // .button:hover {
-                    //     transition: 0.3s;
-                    //     background-color: blue;
-                    //     opacity: 100%;
-                    //     cursor: pointer;
-                    //     font-size: 20pt;
-                    //     text-decoration: underline;
-                    // }
                 }
             }
         }
@@ -180,10 +175,11 @@ section#contact {
     div.social {
         text-overflow: clip;
         max-width: 600px;
-        height: auto;
         /* Tao cuon chu chay len xuong */
         // border: 3px solid black;
         border-radius: 5px;
+        /* overflow hidding là Muốn hiden nội dung khi vượt cố định chiều cao */
+        height: auto;
         overflow: hidden;
 
         ul {
