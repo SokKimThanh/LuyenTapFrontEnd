@@ -1,3 +1,207 @@
-#banner{
-    
+section {
+    max-width: 1393px;
+    min-height: 600px;
+    margin: 32px;
+    // border: 1px solid black;
+}
+section#banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("/assets/images/webp/bannerGioiThieucopy.webp") left center no-repeat;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    .inner {
+        // border: 1px solid black;
+        h1 {
+            // border: 1px solid black;
+            font-family: inter;
+            font-size: 44.53px;
+            width: 677px;
+            height: 108px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #search {
+            height: 50px;
+            width: 100%;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+        }
+    }
+}
+/* Ghi chu: debug css = black border */
+section#galleries {
+    display: flex;
+    flex-direction: row;
+    min-width: 300px;
+    // border: 1px solid black;
+
+    .gallery {
+        // border: 1px solid black;
+        padding: 8px;
+        width: 100%;
+        /* header menu chuc nang */
+        header.special {
+            // border: 1px solid black;
+            // font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+            text-align: center;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            div.ChucNang {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid black;
+                flex-direction: row;
+            }
+        }
+        /* noi dung media list */
+        .content {
+            // border: 1px solid black;
+            /*  Tự động xuống dòng các div thừa còn lại trên 1 hàng nếu không đủ pixel*/
+            display: flex;
+            flex-wrap: wrap;
+            align-content: stretch;
+            justify-content: center;
+            div.media {
+                display: flex;
+                flex-direction: row;
+                // border: 1px solid black;
+                justify-content: center; /* center menu vao chinh giua */
+                margin: 8px 8px;
+                /* position relative dong khung 2 div 
+                    lam cho nut chong len hinh */
+                position: relative;
+
+                a {
+                    width: auto;
+                    // border: 1px solid black;
+                    display: grid; /* grid lam cho phan tu con co the self align */
+                    img {
+                        width: 500px; /* tang kich thuoc hinh len o day */
+                        height: auto;
+                        display: flex;
+                        justify-self: self-end; /* float ben phai */
+                    }
+                }
+                /* div button dang ky*/
+                div {
+                    width: 40%;
+                    // border: 1px solid black;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    /* position absolute dich chuyen vi tri nut len tren div
+                            height 100% dich chuyen center 
+                        */
+                    position: absolute;
+                    height: 100%;
+                    p {
+                        border: 1px solid black;
+                    }
+                    /* nút component shadow */
+                    // .button {
+                    //     border: 1px solid blue;
+                    //     border-radius: 50px;
+                    //     background-color: blue;
+                    //     opacity: 60%;
+                    //     padding: 20px;
+                    //     color: white;
+                    //     font-size: 12;
+                    //     transition: 0.1s;
+                    // }
+                    // .button:hover {
+                    //     transition: 0.3s;
+                    //     background-color: blue;
+                    //     opacity: 100%;
+                    //     cursor: pointer;
+                    //     font-size: 20pt;
+                    //     text-decoration: underline;
+                    // }
+                }
+            }
+        }
+        footer {
+            display: flex;
+            margin: 15px 0 0 0;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    }
+}
+section#contact {
+    display: flex;
+    flex-direction: row;
+    background-color: #3a342a;
+    color: white;
+    justify-content: space-around;
+    // font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 14pt;
+    div.column {
+        display: flex;
+        flex-direction: column;
+        /* tach cot */
+        justify-content: space-between;
+        align-items: center;
+        form {
+            display: flex;
+            flex-direction: column;
+            padding: 8px;
+            width: 100%;
+            div {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                label {
+                    width: 30%;
+                }
+                div {
+                    width: 70%;
+                    display: flex;
+                    justify-content: flex-start;
+                    input {
+                        width: 100%;
+                    }
+                }
+            }
+            ul {
+                list-style-type: none;
+            }
+        }
+    }
+    div.social {
+        text-overflow: clip;
+        max-width: 600px;
+        height: auto;
+        /* Tao cuon chu chay len xuong */
+        // border: 3px solid black;
+        border-radius: 5px;
+        overflow: hidden;
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li > a {
+                color: white;
+            }
+        }
+        .followMe {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+    }
+}
+.redCode {
+    color: red;
 }
