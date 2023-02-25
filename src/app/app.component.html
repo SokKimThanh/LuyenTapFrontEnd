@@ -1,25 +1,30 @@
 <div class="page-wrap">
+  <!-- mobile -->
+  <!-- Top Navigation Menu -->
   <!-- Nav -->
   <nav id="nav">
-    <ul>
-      <li *ngFor="let item of links" [style.background-image]="'url(' + item.backgroundImage + ')'">
-        <span>
-          <a routerLink="{{item.url}}" (click)="activeLink(item.id)" routerLinkActive="active">
-            <p>{{item.name}}</p>
-          </a>
-        </span>
-      </li>
-    </ul>
-    <!-- <ul>
-      <li ><a [routerLink]="['/index']" (click)="activeLink(1)" [ngClass]="{'active' : tab === 1}">HOME</a></li>
-      <li><a [routerLink]="['/gallery']" (click)="activeLink(2)" [ngClass]="{'active' : tab === 2}">GALLERY</a></li>
-      <li><a [routerLink]="['/generic']" (click)="activeLink(3)" [ngClass]="{'active' : tab === 3}">GENERIC</a></li>
-      <li><a [routerLink]="['/carousel']" (click)="activeLink(4)" [ngClass]="{'active' : tab === 4}">CAROUSEL</a></li>
-      <li><a [routerLink]="['/character']" (click)="activeLink(5)" [ngClass]="{'active' : tab === 5}">CONTACT</a></li>
-    </ul> -->
+    <div id="navbar-header" class="navbar-header">
+      <button type="button" class="navbar-toggle" (click)="onClick()">+++
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+
+    </div>
+    <div id="navbar" [ngStyle]="{'transform': 'translateX(' + $value + 'px)'}">
+      <a id="closeButton" type="button" (click)="onClick()">x</a>
+      <ul class="links">
+        <li class="link" *ngFor="let item of links" [style.background-image]="'url(' + item.backgroundImage + ')'">
+          <span>
+            <a routerLink="{{item.url}}" (click)="activeLink(item.id)" routerLinkActive="active">
+              <p>{{item.name}}</p>
+            </a>
+          </span>
+        </li>
+      </ul>
+    </div>
   </nav>
   <!-- Main -->
   <section id="main">
     <router-outlet></router-outlet>
   </section>
+
 </div>

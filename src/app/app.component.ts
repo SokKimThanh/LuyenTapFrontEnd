@@ -1,5 +1,8 @@
+import { Directive } from '@angular/core';
+import { HostBinding, HostListener } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Pipe, PipeTransform } from '@angular/core';
+import { trigger, style, animate, transition } from '@angular/animations';
 
 @Pipe({
   name: 'asUrl'
@@ -9,9 +12,7 @@ export class BackgroundUrlPipe implements PipeTransform {
   transform(value: string): string {
     return `url(./images/${value})`
   }
-
 }
-
 export interface Link {
   id: number;
   name: string;
@@ -21,12 +22,25 @@ export interface Link {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    trigger('fade', [
+      transition('void => *', [
+        style({ opacity: 0 }),
+        animate(300, style({ opacity: 1 }))
+      ]),
+      transition('* => void', [
+        animate(1000, style({ opacity: 0 }))
+      ])
+    ])
+  ]
 })
 export class AppComponent implements OnInit {
   title: string;
   links: Link[];
   tab: number;
+  render: boolean = false;
+  $value: number;
   activeLink(tab): void {
     if (tab === 1) {
       this.tab = 1;
@@ -50,6 +64,10 @@ export class AppComponent implements OnInit {
       { id: 4, name: "mua bán sách cũ".toLocaleUpperCase(), url: '/carousel'.toLowerCase(), backgroundImage: "./assets/images/fulls/09.jpg" },
       { id: 5, name: "Thuê gia sư".toLocaleUpperCase(), url: '/character'.toLowerCase(), backgroundImage: "./assets/images/fulls/08.jpg" },
     ]
+  }
+  onClick(): void {
+    this.render = !this.render;
+    this.$value = this.render ? -500 : 0;
   }
 }
 

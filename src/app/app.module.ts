@@ -15,7 +15,8 @@ import { CarouselHolderComponent } from './carousel-holder/carousel-holder.compo
 import { OwlModule } from 'ngx-owl-carousel';
 import { CharactersComponent } from './characters/characters.component';
 import { CharacterComponent } from './characters/character.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RainbowDirective } from './rainbow.directive'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     WelcomeComponent,
     CarouselHolderComponent,
     CharactersComponent,
-    CharacterComponent
+    CharacterComponent,
+    RainbowDirective
   ],
   imports: [
     CommonModule,
