@@ -9,7 +9,7 @@
       </button>
 
     </div>
-    <div id="navbar" [ngStyle]="{'transform': 'translateX(' + $value + 'px)'}">
+    <div id="navbar" [ngStyle]="{'transform': 'translateX(' + valueTranslateX + 'px)'}">
       <a id="closeButton" type="button" (click)="onClick()">x</a>
       <ul class="links">
         <li class="link" *ngFor="let item of links" [style.background-image]="'url(' + item.backgroundImage + ')'">

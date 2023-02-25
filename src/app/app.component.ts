@@ -40,7 +40,7 @@ export class AppComponent implements OnInit {
   links: Link[];
   tab: number;
   render: boolean = false;
-  $value: number;
+  valueTranslateX: number;
   activeLink(tab): void {
     if (tab === 1) {
       this.tab = 1;
@@ -67,7 +67,7 @@ export class AppComponent implements OnInit {
   }
   onClick(): void {
     this.render = !this.render;
-    this.$value = this.render ? -500 : 0;
+    this.valueTranslateX = this.render ? -500 : 0;
   }
 }
 
